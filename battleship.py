@@ -7,7 +7,7 @@ def printBoard(board):
             print(board[r][c],end=' ')
         print()
 
-board = [['0','0','0'],['0','0','0'],['g','h','i']]
+board = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 printBoard(board)
 
 row = int(input('Enter a row: '))
