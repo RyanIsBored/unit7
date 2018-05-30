@@ -6,6 +6,11 @@ def printBoard(board1,board2):
         for c in range(0,5):
             print(board1[r][c],end=' ')
         print()
+    print(' ')
+    for r in range(0,5):
+        for c in range(0,5):
+            print(board2[r][c],end=' ')
+        print()
 
 def createBoard():
      return [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
