@@ -15,7 +15,8 @@ def printBoard(board1,board2):
 def createBoard():
      return [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 
-
+def getIndices():
+    
 
 if __name__ == '__main__':
     player = createBoard()
