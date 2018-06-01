@@ -15,9 +15,17 @@ def printBoard(board1,board2):
 def createBoard():
      return [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 
-def getIndices():
+def placePlayerShips(player):
+    ship1 = input('Where do you want to place your first ship?: ")
     
 
+def getIndices(coord):
+    if coord[0]=='A':
+        row=0
+    if coord[0]=='B':
+        row=1
+    if coord[0]=='C':
+        row=2
 if __name__ == '__main__':
     player = createBoard()
     computer = createBoard()
