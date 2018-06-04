@@ -17,7 +17,8 @@ def createBoard():
 
 def placePlayerShips(player):
     ship1 = input('Where do you want to place your first ship?: ")
-    
+    [row,col]=getIndices(ship1)
+    player[row][col] = 'X'
 
 def getIndices(coord):
     if coord[0]=='A':
@@ -26,6 +27,13 @@ def getIndices(coord):
         row=1
     if coord[0]=='C':
         row=2
+     if coord[0]=='D':
+        row=3
+     if coord[0]=='E':
+        row=4
+     col=coord[1]-1:
+    return[row,col]
+
 if __name__ == '__main__':
     player = createBoard()
     computer = createBoard()
@@ -33,5 +41,4 @@ if __name__ == '__main__':
     
     row = int(input('Enter a row: '))
     col = int(input('Enter a column: '))
-    player[row-1][col-1] = 'X'
     printBoard(player,computer)
