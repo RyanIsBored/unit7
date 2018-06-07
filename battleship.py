@@ -1,6 +1,6 @@
 #Ryan Jones
 #5/23/18
-
+from random import randint
 def printBoard(board1,board2):
     for r in range(0,5):
         for c in range(0,5):
@@ -26,6 +26,12 @@ def placePlayerShips(player):
     [row,col]=getIndices(ship3)
     player[row][col] = 'X'
 
+def placeComputerShips(computer):
+    [row]=randint(0,4)
+    [col]=randint(0,4)
+    ship4[row][col] = 'X'
+    
+
 def getIndices(coord):
     if coord[0]=='A':
         row=0
@@ -46,4 +52,5 @@ if __name__ == '__main__':
     printBoard(player,computer)
     
     placePlayerShips(player)
+    placeComputerShips(computer)
     printBoard(player,computer)
