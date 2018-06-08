@@ -27,9 +27,14 @@ def placePlayerShips(player):
     player[row][col] = 'X'
 
 def placeComputerShips(computer):
-    [row]=randint(0,4)
-    [col]=randint(0,4)
-    ship4[row][col] = 'X'
+    shipsPlaced = 0
+    while shipsPlaced<3:
+        row=randint(0,4)
+        col=randint(0,4)
+        if computer[row][col]==0:
+            computer[row][col] = 'X'
+            shipsPlaced+=1
+    
     
 
 def getIndices(coord):
