@@ -36,6 +36,13 @@ def placeComputerShips(computer):
             shipsPlaced+=1
     
     
+def playerGuess(computer):
+    pguess = input("where do you want to guess: ")
+    [row,col]=getIndices(pguess)
+    if computer[row][col]=='X':
+        computer[row][col] = 'H'
+    else:
+        computer[row][col] = 'M'
 
 def getIndices(coord):
     if coord[0]=='A':
@@ -58,4 +65,6 @@ if __name__ == '__main__':
     
     placePlayerShips(player)
     placeComputerShips(computer)
-    printBoard(player,computer)
+    while True:
+        printBoard(player,computer)
+        playerGuess(computer)
