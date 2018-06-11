@@ -44,6 +44,16 @@ def playerGuess(computer):
     else:
         computer[row][col] = 'M'
 
+def computerGuess(player):
+    row=randint(0,4)
+    col=randint(0,4)
+    if player[row][col]=='X':
+        player[row][col] = 'H'
+    elif player[row][col]==0:
+        player[row][col] = 'M'
+    else:
+        computerGuess(player)
+
 def getIndices(coord):
     if coord[0]=='A':
         row=0
@@ -68,3 +78,4 @@ if __name__ == '__main__':
     while True:
         printBoard(player,computer)
         playerGuess(computer)
+        computerGuess(player)
