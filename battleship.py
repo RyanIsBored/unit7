@@ -73,7 +73,7 @@ def winner(board):
     hit=0
     for r in range(0,5):
         for c in range(0,5):
-            if board[row][col]=='H':
+            if board[r][c]=='H':
                 hit+=1
     if hit==3:
         return True
@@ -90,10 +90,10 @@ if __name__ == '__main__':
     while True:
         printBoard(player,computer)
         playerGuess(computer)
-        computerGuess(player)
         if winner(computer):
             print("You Win!")
             break
+        computerGuess(player)
         if winner(player):
             print("You lose")
             break
