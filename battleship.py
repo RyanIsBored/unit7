@@ -1,7 +1,7 @@
 #Ryan Jones
 #5/23/18
 from random import randint
-def printBoard(board1,board2):
+def printBoard(board1,board2): #prints boards
     for r in range(0,5):
         for c in range(0,5):
             print(board1[r][c],end=' ')
@@ -12,10 +12,10 @@ def printBoard(board1,board2):
             print(board2[r][c],end=' ')
         print()
 
-def createBoard():
+def createBoard(): #creates boards
      return [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 
-def placePlayerShips(player):
+def placePlayerShips(player): #lets you place ships
     ship1 = input("Where do you want to place your first ship?: ")
     [row,col]=getIndices(ship1)
     player[row][col] = 'X'
@@ -26,7 +26,7 @@ def placePlayerShips(player):
     [row,col]=getIndices(ship3)
     player[row][col] = 'X'
 
-def placeComputerShips(computer):
+def placeComputerShips(computer): #computer can place ships
     shipsPlaced = 0
     while shipsPlaced<3:
         row=randint(0,4)
@@ -36,7 +36,7 @@ def placeComputerShips(computer):
             shipsPlaced+=1
     
     
-def playerGuess(computer):
+def playerGuess(computer): #for guessing where opponent ships are
     pguess = input("where do you want to guess: ")
     [row,col]=getIndices(pguess)
     if computer[row][col]=='X':
@@ -44,7 +44,7 @@ def playerGuess(computer):
     else:
         computer[row][col] = 'M'
 
-def computerGuess(player):
+def computerGuess(player): #computer guesses where your ships are
     row=randint(0,4)
     col=randint(0,4)
     if player[row][col]=='X':
@@ -54,7 +54,7 @@ def computerGuess(player):
     else:
         computerGuess(player)
 
-def getIndices(coord):
+def getIndices(coord): #translates phrases like B5 or A3 into coordinates
     if coord[0]=='A':
         row=0
     if coord[0]=='B':
@@ -69,7 +69,7 @@ def getIndices(coord):
     return[row,col]
 
 
-def winner(board):
+def winner(board): #when there is a winner and all ships on a board are sunk
     hit=0
     for r in range(0,5):
         for c in range(0,5):
