@@ -68,6 +68,18 @@ def getIndices(coord):
     col=int(coord[1])-1
     return[row,col]
 
+
+def winner(board):
+    hit=0
+    for r in range(0,5):
+        for c in range(0,5):
+            if board[row][col]=='H':
+                hit+=1
+    if hit==3:
+        return True
+    else:
+        return False
+
 if __name__ == '__main__':
     player = createBoard()
     computer = createBoard()
@@ -79,3 +91,9 @@ if __name__ == '__main__':
         printBoard(player,computer)
         playerGuess(computer)
         computerGuess(player)
+        if winner(computer):
+            print("You Win!")
+            break
+        if winner(player):
+            print("You lose")
+            break
